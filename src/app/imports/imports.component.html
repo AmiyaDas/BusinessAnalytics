@@ -1,0 +1,25 @@
+<div>
+    <table class="table" width="100%">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Sl. no.</th>
+            <th scope="col">Category</th>
+            <th scope="col">Title</th>
+            <th scope="col">Post</th>
+            <th scope="col">Options</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let resource of resourcesPosts; index as i">
+            <th scope="row">{{i+1}}</th>
+            <td class="upperCase">{{resource.category}}<br/>{{resource.timestamp}}</td>
+            <td>{{resource.title}}</td>
+            <td>{{resource.text}}</td>
+            <td>
+                <!-- <button mat-raised-button color="primary">Edit</button> -->
+                <button color="danger" (click)="deletePost(resource.key)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</div>
